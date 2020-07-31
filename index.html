@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简易Vue指令</title>
+    <!-- <script src="./dep.js"></script>
+    <script src="./watcher.js"></script>
+    <script src="./observer.js"></script> -->
+    <script src="./compiler.js"></script>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-on:click="testClick">点击事件</h1>
+        <h1 v-html='html'></h1>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'obj',
+            dog: {
+                name: ''
+            },
+            html: '<h1 style="color: red;">测试H标签</h1>'
+        },
+        methods: {
+            testClick() {
+                alert('被点击了')
+            },
+            clickHandler() {
+                this.dog
+                    // 该 name 属性是否是响应式的
+                this.$set(dog, name, 'Trump')
+            }
+        }
+    })
+</script>
+
+</html>
